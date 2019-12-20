@@ -629,7 +629,7 @@
 
 
 
-#if ANYCUBIC_PRINTER_TYPE == 1
+#if ANYCUBIC_PRINTER_TYPE == 0
   // Estrusore standard
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 92.6 }
 #else
@@ -901,14 +901,22 @@
   #define INVERT_X_DIR false
   #define INVERT_Y_DIR true
   #define INVERT_Z_DIR true
+  #if ANYCUBIC_PRINTER_TYPE == 0
   #define INVERT_E0_DIR true
+  #else
+  #define INVERT_E0_DIR false
+  #endif
   #define INVERT_E1_DIR true
 #else
   // driver originali oppure TMC2208 con polarità dei motori invertita
   #define INVERT_X_DIR true
   #define INVERT_Y_DIR false
   #define INVERT_Z_DIR false
+  #if ANYCUBIC_PRINTER_TYPE == 0
   #define INVERT_E0_DIR false
+  #else
+  #define INVERT_E0_DIR true
+  #endif
   #define INVERT_E1_DIR false
 #endif
 
