@@ -41,7 +41,7 @@
 #define ANYCUBIC_PRINTER_DRIVER 1
 
 // 0 - Anycubic M (estrusore stantard) | 1 - Anycubic S (estrusore Titan)
-#define ANYCUBIC_PRINTER_TYPE 2
+#define ANYCUBIC_PRINTER_TYPE 0
 
 // 0 - Livellamento manuale | 1 - BLTouch presente (con supporto upgrade del carrello. In caso contrario, modificare i Probe Offset)
 #define ANYCUBIC_PRINTER_BLTOUCH 1
@@ -1035,7 +1035,9 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
+#if ANYCUBIC_PRINTER_BLTOUCH == 1
 #define AUTO_BED_LEVELING_BILINEAR
+#endif
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
