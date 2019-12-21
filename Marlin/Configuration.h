@@ -44,7 +44,12 @@
 #define ANYCUBIC_PRINTER_TYPE 0
 
 // 0 - Livellamento manuale | 1 - BLTouch presente (con supporto upgrade del carrello. In caso contrario, modificare i Probe Offset)
-#define ANYCUBIC_PRINTER_BLTOUCH 1
+#define ANYCUBIC_PRINTER_BLTOUCH 0
+
+#define X_PROBE_OFFSET_FROM_EXTRUDER 29  // X offset: -left  +right  [of the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -13  // Y offset: -front +behind [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.50   // Z offset: -below +above  [the nozzle]
+
 
  
 #ifndef CONFIGURATION_H
@@ -821,9 +826,11 @@
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER 29  // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER -13  // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.50   // Z offset: -below +above  [the nozzle]
+
+// Definiti sopra
+//#define X_PROBE_OFFSET_FROM_EXTRUDER 29  // X offset: -left  +right  [of the nozzle]
+//#define Y_PROBE_OFFSET_FROM_EXTRUDER -13  // Y offset: -front +behind [the nozzle]
+//#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.50   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 20
@@ -871,8 +878,10 @@
 #define Z_PROBE_OFFSET_RANGE_MIN -20
 #define Z_PROBE_OFFSET_RANGE_MAX 20
 
+#if ANYCUBIC_PRINTER_BLTOUCH == 1
 // Enable the M48 repeatability test to test probe accuracy
 #define Z_MIN_PROBE_REPEATABILITY_TEST
+#endif
 
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
 // :{ 0:'Low', 1:'High' }
