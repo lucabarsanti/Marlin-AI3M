@@ -910,22 +910,32 @@
   #define INVERT_X_DIR false
   #define INVERT_Y_DIR true
   #define INVERT_Z_DIR true
+  
+  // 0-M 1-S
   #if ANYCUBIC_PRINTER_TYPE == 0
-  #define INVERT_E0_DIR true
+    // Estrusore Standard
+    #define INVERT_E0_DIR false
   #else
-  #define INVERT_E0_DIR false
+    // Estrusore Titan
+    #define INVERT_E0_DIR true
   #endif
+  
   #define INVERT_E1_DIR true
 #else
   // driver originali oppure TMC2208 con polarità dei motori invertita
   #define INVERT_X_DIR true
   #define INVERT_Y_DIR false
   #define INVERT_Z_DIR false
+  
+  // 0-M 1-S
   #if ANYCUBIC_PRINTER_TYPE == 0
-  #define INVERT_E0_DIR false
+    // Estrusore Standard
+    #define INVERT_E0_DIR false
   #else
-  #define INVERT_E0_DIR true
+    // Estrusore Titan
+    #define INVERT_E0_DIR true
   #endif
+  
   #define INVERT_E1_DIR false
 #endif
 
