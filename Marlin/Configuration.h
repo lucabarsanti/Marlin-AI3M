@@ -36,6 +36,10 @@
  *
  */
 
+/**
+* Firmware modificato per la Anycubic i3 Mega M/S
+* FoxSource 3D Printing - www.foxsource.io - https://www.youtube.com/c/FoxSource3DPrinting
+*/
 
 // 0 - driver originali oppure TMC2208 con polarità dei motori invertita | 1 - driver TMC2208 con collegamenti originali
 #define ANYCUBIC_PRINTER_DRIVER 1
@@ -50,7 +54,7 @@
 #define Y_PROBE_OFFSET_FROM_EXTRUDER -13  // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER -1.50   // Z offset: -below +above  [the nozzle]
 
-
+// IL FIRMWARE È STATO TESTATO CON TMC2208 se avete driver differenti andate alla riga 577 per inserire il modello corretto. Funzionamento non testato.
  
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
@@ -573,6 +577,7 @@
  *          TMC5130, TMC5130_STANDALONE
  * :['A4988', 'DRV8825', 'LV8729', 'L6470', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE']
  */
+ 
 #define X_DRIVER_TYPE  TMC2208_STANDALONE // comment out for stock drivers
 #define Y_DRIVER_TYPE  TMC2208_STANDALONE // comment out for stock drivers
 #define Z_DRIVER_TYPE  TMC2208_STANDALONE // comment out for stock drivers
